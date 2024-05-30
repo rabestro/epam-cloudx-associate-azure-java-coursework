@@ -30,7 +30,6 @@ This module introduces Azure CLI, Azure Container Registry (ACR), and Azure App 
 
 ## Resources
 
-1. [Azure CLI Commands Cheat Sheet](cheat-sheet.md)
-2. [Azure Container Registry Documentation](https://docs.microsoft.com/en-us/azure/container-registry/)
-3. [Azure App Service Documentation](https://docs.microsoft.com/en-us/azure/app-service/)
-4. [GitHub Actions Documentation](https://docs.github.com/en/actions)
+1. [Azure Container Registry Documentation](https://docs.microsoft.com/en-us/azure/container-registry/)
+2. [Azure App Service Documentation](https://docs.microsoft.com/en-us/azure/app-service/)
+3. [GitHub Actions Documentation](https://docs.github.com/en/actions)
