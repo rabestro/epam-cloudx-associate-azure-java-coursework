@@ -26,6 +26,7 @@ build_and_push_images() {
             --image $service:v1 \
             --registry $ACR_NAME \
             --file $service/Dockerfile ./$service
+        echo "Successfully built and pushed $service..."
     done
 }
 
