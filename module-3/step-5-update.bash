@@ -23,7 +23,7 @@ build_and_push_images() {
         az acr build \
             --image $service:$VERSION \
             --registry $ACR_NAME \
-            --file $service/Dockerfile ./$service
+            --file $service/Dockerfile ./$service || die "Failed to build/push image: $service"
         echo "Successfully built and pushed $service..."
     done
 }
