@@ -25,10 +25,17 @@ create_container_app_environment() {
         || die "Failed to create Container App Env: $APP_ENV in region: $REGION"
 }
 
+default_domain() {
+    az containerapp env show \
+        --resource-group $RESOURCES_GROUP \
+        --name $APP_ENV \
+        --query properties.defaultDomain \
+        --output tsv
+}
+
 create_container_app() {
     local service=$1
     local target_port=8080
-    local domain=$APP_ENV.$REGION.azurecontainerapps.io
 
     # Create a Container App
     az containerapp create \
@@ -47,15 +54,18 @@ create_container_app() {
         --memory 0.5Gi \
         --env-vars \
             SERVER_PORT=$target_port \
-            PETSTOREAPP_URL=https://petstoreapp.$domain \
-            PETSTOREPETSERVICE_URL=https://petstorepetservice.$domain \
-            PETSTOREPRODUCTSERVICE_URL=https://petstoreproductservice.$domain \
-            PETSTOREORDERSERVICE_URL=https://petstoreorderservice.$domain \
+            PETSTOREAPP_URL=https://petstoreapp.$DOMAIN \
+            PETSTOREPETSERVICE_URL=https://petstorepetservice.$DOMAIN \
+            PETSTOREPRODUCTSERVICE_URL=https://petstoreproductservice.$DOMAIN \
+            PETSTOREORDERSERVICE_URL=https://petstoreorderservice.$DOMAIN \
         || die "Failed to create Container App: $service in region: $REGION"
 }
 
 # Create a Container App Environment
 create_container_app_environment
+
+# Get the defaultDomain of a Container App Environment
+export DOMAIN=$(default_domain)
 
 # Create Container Apps for the services
 create_container_app petstoreapp
