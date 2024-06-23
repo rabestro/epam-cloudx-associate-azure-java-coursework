@@ -1,7 +1,8 @@
-# Module 4: Container Apps (Steps 1 & 2)
+# Module 4: Container Apps
+# Steps 1 and 2: Set Up Azure Resources, Build and Push Docker Images
 
 MODULE=module4
-export RESOURCES_GROUP=rg_$MODULE
+export RESOURCES_GROUP=rg-$MODULE
 export ACR_NAME=${MODULE}acr
 export REGION=westeurope
 export SERVICES=(petstoreapp petstorepetservice petstoreorderservice petstoreproductservice)
