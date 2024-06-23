@@ -50,6 +50,7 @@ create_container_app() {
         --registry-server $ACR_NAME.azurecr.io \
         --registry-username $ACR_USERNAME \
         --registry-password $ACR_PASSWORD \
+        --revisions-mode multiple \
         --cpu 0.25 \
         --memory 0.5Gi \
         --env-vars \
@@ -58,7 +59,7 @@ create_container_app() {
             PETSTOREPETSERVICE_URL=https://petstorepetservice.$DOMAIN \
             PETSTOREPRODUCTSERVICE_URL=https://petstoreproductservice.$DOMAIN \
             PETSTOREORDERSERVICE_URL=https://petstoreorderservice.$DOMAIN \
-        || die "Failed to create Container App: $service in region: $REGION"
+        || die "Failed to create Container App: $service"
 }
 
 # Create a Container App Environment
