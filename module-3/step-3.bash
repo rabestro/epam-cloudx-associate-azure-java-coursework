@@ -23,7 +23,7 @@ create_app_service_plan() {
         --name $service_plan \
         --resource-group $RESOURCES_GROUP \
         --location $region \
-        --sku B1 \
+        --sku S1 \
         --is-linux \
         || die "Failed to create App Service plan: $service_plan in region: $region"
 }
