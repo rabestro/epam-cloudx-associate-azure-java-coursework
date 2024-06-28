@@ -9,6 +9,6 @@ az appservice plan create \
     --name $service_plan \
     --resource-group $RESOURCES_GROUP \
     --location $REGION \
-    --sku B1 \
+    --sku S1 \
     --is-linux \
     || die "Failed to create App Service plan: $service_plan in region: $REGION"
