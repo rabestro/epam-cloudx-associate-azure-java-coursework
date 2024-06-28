@@ -4,10 +4,10 @@ az webapp config appsettings set \
     --settings \
     WEBSITES_PORT=8080 \
     PETSTOREAPP_SERVER_PORT=8080 \
-    PETSTOREPETSERVICE_URL=https://petstorepetservice-eastus.azurewebsites.net \
-    PETSTOREPRODUCTSERVICE_URL=https://petstoreproductservice-eastus.azurewebsites.net \
-    PETSTOREORDERSERVICE_URL=https://petstoreorderservice-eastus.azurewebsites.net
-    
+    PETSTOREPETSERVICE_URL=https://petstorepetservice-$REGION.azurewebsites.net \
+    PETSTOREPRODUCTSERVICE_URL=https://petstoreproductservice-$REGION.azurewebsites.net \
+    PETSTOREORDERSERVICE_URL=https://petstoreorderservice-$REGION.azurewebsites.net
+
 az webapp config appsettings set \
     --resource-group $RESOURCES_GROUP \
     --name petstorepetservice-$REGION \
@@ -28,4 +28,4 @@ az webapp config appsettings set \
     --settings \
     WEBSITES_PORT=8080 \
     PETSTOREORDERSERVICE_SERVER_PORT=8080 \
-    PETSTOREPRODUCTSERVICE_URL=https://petstoreproductservice-eastus.azurewebsites.net    
+    PETSTOREPRODUCTSERVICE_URL=https://petstoreproductservice-$REGION.azurewebsites.net
