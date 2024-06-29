@@ -1,7 +1,7 @@
 source ./die.sh
 
 create_web_app() {
-    local service_plan="asp-$1-${REGION}"
+    local service_plan="asp-$1-$REGION"
     local service="$2-${REGION}"
 
     echo "Creating Web App for service: $service in region: $REGION"
