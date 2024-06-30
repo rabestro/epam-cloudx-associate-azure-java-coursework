@@ -1,4 +1,11 @@
-source ./die.sh
+export RESOURCES_GROUP=module3_rg
+export REGION=eastus
+export ACR_NAME=module3acr
+
+die() {
+    echo "$*" >&2
+    exit 1
+}
 
 create_web_app() {
     local service_plan="asp-$1-$REGION"
