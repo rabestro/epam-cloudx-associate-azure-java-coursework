@@ -1,7 +1,7 @@
 # Step 1: Set Up Azure Resources
 
 export RESOURCES_GROUP=petstore6_rg
-export REGION=eastus
+export REGION=westeurope
 export ACR_NAME=petstore6acr
 
 # Create a resource group
