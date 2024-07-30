@@ -1,6 +1,6 @@
 # Step 1: Set Up Azure Resources
 
-export RESOURCES_GROUP=module5_rg
+export RESOURCES_GROUP=module3_rg
 
 export REGION1=eastus
 export REGION=westeurope
